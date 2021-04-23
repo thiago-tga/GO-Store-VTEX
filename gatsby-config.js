@@ -1,5 +1,7 @@
+const { resolve } = require('path')
+
 require('dotenv').config({
-  path: `${__dirname}/vtex.env`,
+  path: resolve(`vtex.env`),//
 })
 
 const csv2json = require('csvtojson')
@@ -16,7 +18,7 @@ const {
   CONTEXT: ENV = NODE_ENV,
 } = process.env
 
-const allowedHosts = ['storecomponents.vtex.app', 'storetheme.vtex.com']
+const allowedHosts = ['storecomponents.vtex.app', 'storetheme.vtex.com','naughty-johnson-fc162c.netlify.app']
 const isProduction = ENV === 'production'
 const siteUrl = isProduction ? URL : DEPLOY_PRIME_URL
 
